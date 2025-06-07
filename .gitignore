@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+*.debug.log
+*.error.log
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+*.log
+*.local
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.swp
+*.swo
+
+# Testing
+/coverage
+
+# Vite
+node_modules/.vite/
+
+# TypeScript
+*.tsbuildinfo
+
+# Cache
+.cache
+.parcel-cache
+
+# Next.js
+.next/
+out/
+
+# Production
+/build
+/dist
+
+# Misc
+*.pem
+*.tgz
+.yarn-integrity
+
