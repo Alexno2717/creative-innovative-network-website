@@ -48,8 +48,7 @@ const About: React.FC<AboutProps> = ({ founders = [] }) => {
   };
 
   return (
-    <>
-      <div role="main" className="min-h-screen" tabIndex={-1}>
+    <div role="main" className="min-h-screen" tabIndex={-1}>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#3AAFA7] to-[#53C3CC] text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -182,14 +181,14 @@ const About: React.FC<AboutProps> = ({ founders = [] }) => {
                 alt={founderOne.alt}
                 className="w-48 h-48 rounded-full mx-auto mb-6"
               />
-              <h3 className="text-xl font-semibold">Alex Shiell</h3>
-              <p className="text-gray-600 mb-4">Co-Founder</p>
+              <h3 className="text-xl font-semibold">{founderOne.name}</h3>
+              <p className="text-gray-600 mb-4">{founderOne.role}</p>
               <a
-                href={founders[0].linkedin}
+                href={founderOne.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                aria-label={`Connect with ${founders[0].name} on LinkedIn`}
+                aria-label={`Connect with ${founderOne.name} on LinkedIn`}
               >
                 Connect on LinkedIn
               </a>
@@ -200,14 +199,14 @@ const About: React.FC<AboutProps> = ({ founders = [] }) => {
                 alt={founderTwo.alt}
                 className="w-48 h-48 rounded-full mx-auto mb-6"
               />
-              <h3 className="text-xl font-semibold">Arianna Stefani</h3>
-              <p className="text-gray-600 mb-4">Co-Founder</p>
+              <h3 className="text-xl font-semibold">{founderTwo.name}</h3>
+              <p className="text-gray-600 mb-4">{founderTwo.role}</p>
               <a
-                href={founders[1].linkedin}
+                href={founderTwo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                aria-label={`Connect with ${founders[1].name} on LinkedIn`}
+                aria-label={`Connect with ${founderTwo.name} on LinkedIn`}
               >
                 Connect on LinkedIn
               </a>
