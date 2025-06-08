@@ -8,14 +8,7 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
-  "homepage": "https://alexno2717.github.io/creative-innovative-network-website/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Alexno2717/creative-innovative-network-website.git"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -89,5 +82,11 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.19"
+  }
+}
+{
+  "scripts": {
+    "build": "vite build --base=/creative-innovative-network-website/",
+    // ... other scripts
   }
 }
