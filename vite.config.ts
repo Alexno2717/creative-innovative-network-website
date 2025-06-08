@@ -5,7 +5,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   root: './',
-  base: mode === 'production' ? '/creative-innovative-network-website/' : '/',
+  base: mode === 'production' ? process.env.VITE_BASE_PATH || '/creative-innovative-network-website/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

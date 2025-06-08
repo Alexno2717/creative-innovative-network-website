@@ -8,7 +8,14 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "homepage": "https://alexno2717.github.io/creative-innovative-network-website/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alexno2717/creative-innovative-network-website.git"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
