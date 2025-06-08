@@ -23,5 +23,11 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/creative-innovative-network-website/assets/main-dBhT4Jil.js"></script>
+    <script type="module">
+      import { createApp } from 'react-dom/client';
+      import App from '/src/App';
+      const root = createApp(document.getElementById('root'));
+      root.render(App);
+    </script>
   </body>
 </html>
