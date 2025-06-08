@@ -19,6 +19,17 @@
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <script type="module" src="/assets/main.js"></script>
+    <script>
+      // Check if the script loaded correctly
+      window.addEventListener('load', function() {
+        const script = document.querySelector('script[src="/assets/main.js"]');
+        if (!script) {
+          console.error('Main script not found');
+        } else {
+          console.log('Main script loaded successfully');
+        }
+      });
+    </script>
   </head>
 
   <body>
