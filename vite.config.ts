@@ -10,7 +10,7 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       input: {
-        main: './index.html'
+        main: './src/entry.tsx'
       }
     }
   }
