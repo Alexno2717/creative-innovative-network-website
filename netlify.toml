@@ -1,0 +1,27 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  base = "/"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
+  VITE_NODE_VERSION = "18"
+
+[[headers]]
+  for = "/*"
+  values = { "Content-Type" = "application/javascript; charset=UTF-8" }
+
+[[headers]]
+  for = "/*"
+  values = { "Access-Control-Allow-Origin" = "*" }
+
+[plugins]
+  # Disable Next.js plugin
+  [[plugins]]
+    package = "@netlify/plugin-nextjs"
+    enabled = false

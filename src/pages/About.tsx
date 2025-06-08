@@ -1,54 +1,28 @@
-
 import React from 'react';
 import { Target, Eye, Heart } from 'lucide-react';
-
-// Error boundary for image loading
-const ImageWithFallback = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
-  const [error, setError] = React.useState(false);
-  
-  return (
-    <img
-      src={error ? '/fallback-avatar.png' : src}
-      alt={alt}
-      className={className}
-      loading="lazy"
-      onError={() => setError(true)}
-    />
-  );
-};
 
 interface Founder {
   name: string;
   role: string;
   linkedin: string;
-  image: string;
-  alt: string;
 }
 
-interface AboutProps {
-  founders: Founder[];
-}
-
-const About: React.FC<AboutProps> = ({ founders = [] }) => {
-  // Safely access founders with fallbacks
-  const founderOne = founders[0] || {
-    name: "Founder",
+const founders: Founder[] = [
+  {
+    name: "Alex Shiell",
     role: "Co-Founder",
-    linkedin: "#",
-    image: "/fallback-avatar.png",
-    alt: "Founder"
-  };
-
-  const founderTwo = founders[1] || {
-    name: "Founder",
+    linkedin: "https://www.linkedin.com/in/alex-shiell-a1513117b",
+  },
+  {
+    name: "Arianna Stefani",
     role: "Co-Founder",
-    linkedin: "#",
-    image: "/fallback-avatar.png",
-    alt: "Founder"
-  };
+    linkedin: "https://www.linkedin.com/in/arianna-stefani/",
+  }
+];
 
+export default function About() {
   return (
-    <div role="main" className="min-h-screen" tabIndex={-1}>
+    <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#3AAFA7] to-[#53C3CC] text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -57,6 +31,49 @@ const About: React.FC<AboutProps> = ({ founders = [] }) => {
             We believe that the most innovative solutions emerge when creative minds 
             from different backgrounds come together to explore, experiment, and build.
           </p>
+        </div>
+      </section>
+
+      {/* Founders Section */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Meet Our Founders</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            {founders.map((founder, index) => (
+              <div key={index} className="text-center">
+                <h3 className="text-2xl font-bold mb-2">{founder.name}</h3>
+                <p className="text-gray-600 mb-4">{founder.role}</p>
+                <a
+                  href={founder.linkedin}
+                  className="text-blue-600 hover:text-blue-800"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Connect on LinkedIn
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Story */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Story</h2>
+          <div className="bg-gradient-to-r from-[#F7F080]/20 to-[#53C3CC]/20 p-8 rounded-lg">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              The Creative Innovative Network started as a simple idea: what if creative professionals 
+              had a space to connect beyond the usual networking events? A place where curiosity 
+              trumps credentials, where diverse perspectives are celebrated, and where meaningful 
+              collaborations naturally emerge.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Today, we're a growing community of designers, strategists, innovators, and builders 
+              who believe that the future belongs to those who can think creatively, connect 
+              authentically, and create impact together.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -169,70 +186,6 @@ const About: React.FC<AboutProps> = ({ founders = [] }) => {
           </div>
         </div>
       </section>
-
-      {/* Founders Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Meet the Founders</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="text-center">
-              <ImageWithFallback
-                src={`/public/${founderOne.alt.toLowerCase().replace(' ', '-')}.webp`}
-                alt={founderOne.alt}
-                className="w-48 h-48 rounded-full mx-auto mb-6"
-              />
-              <h3 className="text-xl font-semibold">{founderOne.name}</h3>
-              <p className="text-gray-600 mb-4">{founderOne.role}</p>
-              <a
-                href={founderOne.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                aria-label={`Connect with ${founderOne.name} on LinkedIn`}
-              >
-                Connect on LinkedIn
-              </a>
-            </div>
-            <div className="text-center">
-              <ImageWithFallback
-                src={`/public/${founderTwo.alt.toLowerCase().replace(' ', '-')}.webp`}
-                alt={founderTwo.alt}
-                className="w-48 h-48 rounded-full mx-auto mb-6"
-              />
-              <h3 className="text-xl font-semibold">{founderTwo.name}</h3>
-              <p className="text-gray-600 mb-4">{founderTwo.role}</p>
-              <a
-                href={founderTwo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                aria-label={`Connect with ${founderTwo.name} on LinkedIn`}
-              >
-                Connect on LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    </main>
   );
-};
-
-export const founders: Founder[] = [
-  {
-    name: "Alex Shiell",
-    role: "Co-Founder",
-    linkedin: "https://www.linkedin.com/in/alex-shiell-a1513117b",
-    image: "/alex-face.png",
-    alt: "Alex Shiell"
-  },
-  {
-    name: "Arianna Stefani",
-    role: "Co-Founder",
-    linkedin: "https://www.linkedin.com/in/arianna-stefani/",
-    image: "/arianna-photo.jpeg",
-    alt: "Arianna Stefani"
-  }
-];
-
-export default About;
+}
