@@ -18,7 +18,7 @@ export default defineConfig({
         main: './src/entry.tsx'
       },
       output: {
-        entryFileNames: 'main.js'
+        entryFileNames: 'assets/[name]-[hash].js'
       }
     },
     manifest: true,
