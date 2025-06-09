@@ -13,7 +13,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    assetsDir: 'assets',
     rollupOptions: {
       input: {
         main: './src/entry.tsx'
