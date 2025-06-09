@@ -21,7 +21,8 @@ export default defineConfig({
         entryFileNames: 'main.js'
       }
     },
-    manifest: true
+    manifest: true,
+    copyPublicDir: true
   },
   server: {
     headers: {
