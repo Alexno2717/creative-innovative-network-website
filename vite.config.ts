@@ -23,5 +23,10 @@ export default defineConfig({
       }
     },
     manifest: true
+  },
+  server: {
+    headers: {
+      'Cache-Control': 'no-cache'
+    }
   }
 });
