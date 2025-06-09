@@ -17,6 +17,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './src/entry.tsx'
+      },
+      output: {
+        entryFileNames: 'main.js'
       }
     },
     manifest: true
